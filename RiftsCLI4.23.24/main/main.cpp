@@ -74,6 +74,7 @@ int main() {
                 std::cout << PlayerChar.damageRating[0] << std::endl;
         }
         else if (input == "attack") {
+            //disable stat printing
             PlayerChar.combatTest();
         }
         else {
