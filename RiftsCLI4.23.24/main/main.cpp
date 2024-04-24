@@ -1,5 +1,5 @@
 #include "./headers/init.h"
-#include "./headers/rollHeader.h"
+//#include "./headers/rollHeader.h"
 #include <iostream>
 //#include <fstream>
 //#include <vector>
@@ -70,8 +70,11 @@ int main() {
                     std::cout << PlayerChar.attributeName[i] << ": ";
                     std::cout << PlayerChar.attribute[i] << std::endl;
                }
-                std::cout << PlayerChar.damageRatingName[0] << ": ";
-                std::cout << PlayerChar.damageRating[0] << std::endl;
+                // won't print hp? (damageRatingName[0])
+                for (int i = 0; i < 6; i++) {
+                    std::cout << PlayerChar.damageRatingName[i] << ": ";
+                    std::cout << PlayerChar.damageRating[i] << std::endl;
+                }
         }
         else if (input == "attack") {
             //disable stat printing

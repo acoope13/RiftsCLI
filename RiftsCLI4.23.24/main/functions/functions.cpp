@@ -70,29 +70,31 @@ void charCreation(int* attribute, std::string* attributeName, int* damageRating,
         attribute[i] = attrInit();
     }
     for (int i = 0; i < 8; i++){
-        std::cout << attributeName[i] << ": ";
-        std::cout << attribute[i] << std::endl;
+    //    std::cout << attributeName[i] << ": ";
+    //    std::cout << attribute[i] << std::endl;
     }
     
     //end of base attributes
     
     int psionicValue = psionicRoll();
-    std::cout << psionicValue << " psi: ";
+    //std::cout << psionicValue << " psi: ";
     if (psionicValue == 0){
-    std::cout << "none";
+    //std::cout << "none";
     }
     else if (psionicValue == 1){
-        std::cout << "minor";
+    //    std::cout << "minor";
     }
     else if (psionicValue == 2){
-        std::cout << "major";
+     //   std::cout << "major";
     }
     attribute[8] = ispInit(psionicValue, attribute[1]);
-    std::cout << "\nISP: " << attribute[8] << std::endl;
+    //std::cout << "\nISP: " << attribute[8] << std::endl;
     
     damageRating[0] = hpInit(attribute[5]);
-    std::cout << damageRatingName[0] << ": " << damageRating[0];
-    std::cout << "\n";
+    //std::cout << damageRatingName[0] << ": " << damageRating[0];
+    //std::cout << "\n";
+
+    damageRating[4] = sdcInit();
 }
 
 
@@ -134,7 +136,7 @@ int attrInit(){
 int psionicRoll() {
     int rollValue = roll(1, 100);
     
-    std::cout << rollValue << std::endl;
+    //std::cout << rollValue << std::endl;
     
     if (rollValue <= 10){
         return 2;
@@ -166,6 +168,11 @@ int ispInit(int psiVal, int me){
 int hpInit (int pe){
     return (pe + roll(1, 6));
 }
+
+//for standard sdc sans OCC bonuses / specs
+int sdcInit() {
+    return (12 + roll(2, 6));
+}
 /* programmers note: 
 
 include srand at the start of the true main function
@@ -192,5 +199,26 @@ bool atkInit() {
   else {
     return 0;
   }
+
+}
+
+void combatTest(bool firstBlood) {
+    int playerRoll;
+
+    //enemy first
+    if (firstBlood == 1) {
+        playerRoll = roll(1, 20);
+        //roll = roll(1, 20);
+    }
+
+    if (playerRoll >= 4) {
+        //miss
+    }
+
+    //loop to cycle; 5 rounds for testing
+    for (int i = 0; i < 5; i++) {
+
+
+    }
 
 }

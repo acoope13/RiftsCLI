@@ -18,6 +18,7 @@ int ispInit(int psiVal, int me);
 int hpInit(int pe);
 int psionicRoll();
 void charCreation(int* attribute, std::string* attributeName, int* damageRating, std::string* damageRatingName);
+int sdcInit();
 
 //combat functions
 void combatTest();
